@@ -8,11 +8,12 @@ public class Player {
     private int aSymbolNum;
     private int aNumTurns;
 
+    // Create and initialize player
     public Player(String paName,String paSymbol) {
         aName = paName;
         aSymbol = paSymbol;
         aNumTurns = 0;
-        if(paSymbol.equals("X")) {
+        if (paSymbol.equals("X")) {
             aSymbolNum = 1;
         } else {
             aSymbolNum = 2;

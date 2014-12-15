@@ -2,14 +2,18 @@
  * Created by patrikdendis on 29.11.14.
  */
 
-import java.awt.*;
-import javax.swing.*;
 
-public class GuiHelper extends JFrame{
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import java.awt.Container;
+import java.awt.BorderLayout;
+
+public class GuiHelper extends JFrame {
 
     private Container aPanel;
     private JFrame aFrame;
 
+    // Create GUI and
     public GuiHelper(String paName) {
         this.createGUI(paName);
     }
@@ -24,15 +28,18 @@ public class GuiHelper extends JFrame{
         aFrame.setResizable(false);
     }
 
+    // show GUI window
     public void showGUI() {
         aFrame.pack();
         aFrame.setVisible(true);
     }
 
-    public void addJPanel(JPanel paControlPanel){
+    // add jPanel to window
+    public void addJPanel(JPanel paControlPanel) {
         aPanel.add(paControlPanel, BorderLayout.NORTH);
     }
 
+    // Stop window
     public void stopGUI() {
         aFrame.getContentPane().removeAll();
     }
