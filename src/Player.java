@@ -20,6 +20,18 @@ public class Player {
         }
     }
 
+    // Create and initialize player with different parameters
+    public Player(String paName, int paSymbolNum) {
+        aName = paName;
+        aSymbolNum = paSymbolNum;
+        aNumTurns = 0;
+        if (paSymbolNum == 1) {
+            aSymbol = "X";
+        } else {
+            aSymbol = "O";
+        }
+    }
+
     public String getPlayerSymbol() {
         return this.aSymbol;
     }
@@ -35,4 +47,14 @@ public class Player {
     public int getaNumTurns() { return this.aNumTurns; }
 
     public int getaSymbolNum() { return this.aSymbolNum; }
+
+    @Override
+    public String toString() {
+        return "Player{" +
+                "aName='" + aName + '\'' +
+                ", aSymbol='" + aSymbol + '\'' +
+                ", aSymbolNum=" + aSymbolNum +
+                ", aNumTurns=" + aNumTurns +
+                '}';
+    }
 }

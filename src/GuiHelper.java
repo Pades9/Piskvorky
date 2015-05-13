@@ -2,11 +2,8 @@
  * Created by patrikdendis on 29.11.14.
  */
 
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import java.awt.Container;
-import java.awt.BorderLayout;
+import javax.swing.*;
+import java.awt.*;
 
 public class GuiHelper extends JFrame {
 
@@ -20,6 +17,7 @@ public class GuiHelper extends JFrame {
 
     public void createGUI(String paName) {
         //Create and set up the window.
+        System.setProperty("apple.laf.useScreenMenuBar", "true");
         aFrame = new JFrame(paName);
         aFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //Set up the content pane.
@@ -34,14 +32,16 @@ public class GuiHelper extends JFrame {
         aFrame.setVisible(true);
     }
 
+    public Container getaPanel() {
+        return aPanel;
+    }
+
     // add jPanel to window
     public void addJPanel(JPanel paControlPanel) {
         aPanel.add(paControlPanel, BorderLayout.NORTH);
     }
 
-    // Stop window
-    public void stopGUI() {
-        aFrame.getContentPane().removeAll();
+    public JFrame getaFrame() {
+        return aFrame;
     }
-
 }
